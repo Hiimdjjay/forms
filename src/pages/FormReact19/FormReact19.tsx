@@ -1,5 +1,3 @@
-import { Checkbox } from '../../components/Checkbox/Checkbox';
-import { Input } from '../../components/Input/Input';
 import styles from '../Form.module.css';
 
 export function FormReact19() {
@@ -10,16 +8,7 @@ export function FormReact19() {
 					<h1>Register</h1>
 					<p>Form React 19</p>
 				</div>
-				<div className={styles.inputsBox}>
-					<Input label='Username' id='username' placeholder='Username' />
-					<Input label='Email adress' id='email' type='email' placeholder='Email adress' />
-					<Input label='Password' id='telephone' type='password' placeholder='Password' />
-					<Input label='Confirm Password' id='telephone' type='password' placeholder='Confirm password' />
-					<Checkbox label='I accept the Privacy Policy and Terms & Condition.' />
-				</div>
-				<button className={styles.button} type='submit'>
-					Submit
-				</button>
+
 			</form>
 		</main>
 	);
