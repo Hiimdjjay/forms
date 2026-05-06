@@ -1,0 +1,25 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+	margin-top: 60px;
+}
+
+.background {
+	background-color: #131313;
+	padding: 30px;
+	border-radius: 20px;
+	border: 1px solid #333;
+}
+
+h1 {
+	font-size: 55px;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+p {
+	font-size: 1.8rem;
+	font-weight: 500;
+	line-height: 1.5;
+}
