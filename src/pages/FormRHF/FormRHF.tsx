@@ -11,7 +11,7 @@ export function FormRHF() {
 					<p>React Hook Form</p>
 				</div>
 				<div className={styles.inputsBox}>
-					<Input label='Username' id='username' placeholder='Username' />
+					<Input label='Username' id='username' placeholder='Username'  />
 					<Input label='Email adress' id='email' type='email' placeholder='Email adress' />
 					<Input label='Password' id='telephone' type='password' placeholder='Password' />
 					<Input label='Confirm Password' id='telephone' type='password' placeholder='Confirm password' />
