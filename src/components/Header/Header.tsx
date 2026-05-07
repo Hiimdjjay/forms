@@ -4,8 +4,8 @@ import styles from './Header.module.css';
 const navigationData = [
 	{ id: 1, name: 'Home', path: '/' },
 	{ id: 2, name: 'Form Standard ', path: '/form-standard' },
-	{ id: 3, name: 'Form React 19', path: '/form-react-19' },
-	{ id: 4, name: 'React Hook Form', path: '/form-react-hook-form' }
+	{ id: 3, name: 'RHF', path: '/form-react-hook-form' },
+	{ id: 4, name: 'RHF + Zod', path: '/form-react-hook-form-and-zod' }
 ];
 
 export function Header() {

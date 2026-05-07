@@ -1,0 +1,20 @@
+.checkbox {
+	display: flex;
+	flex-direction: column;
+	gap: 5px;
+}
+
+.checkbox label {
+	font-weight: 500;
+}
+
+.checkbox input {
+	margin-right: 10px;
+}
+
+.checkbox span {
+	font-size: 1.4rem;
+	color: tomato;
+	font-weight: 300;
+	margin-left: 5px;
+}

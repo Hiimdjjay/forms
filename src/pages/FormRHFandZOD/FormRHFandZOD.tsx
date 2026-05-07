@@ -2,13 +2,13 @@ import { Checkbox } from '../../components/Checkbox/Checkbox';
 import { Input } from '../../components/Input/Input';
 import styles from '../Form.module.css';
 
-export function FormReact19() {
+export function FormRHFandZOD() {
 	return (
 		<main>
 			<form className={styles.form} noValidate>
 				<div className={styles.textBox}>
 					<h1>Register</h1>
-					<p>Form React 19</p>
+					<p>Form RHF + ZOD</p>
 				</div>
 				<div className={styles.inputsBox}>
 					<Input label='Username' id='username' placeholder='Username' />
