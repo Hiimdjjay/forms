@@ -3,6 +3,7 @@ import { InputRHF } from '../../components/InputRHF/InputRHF';
 import { Submitted } from '../../components/Submitted/Submitted';
 import styles from '../Form.module.css';
 import { useForm } from 'react-hook-form';
+import emailjs from '@emailjs/browser';
 
 type Inputs = {
 	username: string;
@@ -12,12 +13,16 @@ type Inputs = {
 	terms: boolean;
 };
 
-export function FormRHF() {
+type User = { username: string; email: string; password: string };
+
+export function FormRHF({ addNewUser }: { addNewUser: (user: User) => void }) {
 	const {
 		register,
 		handleSubmit,
 		watch,
-		formState: { errors, isSubmitting, isSubmitSuccessful }
+		formState: { errors, isSubmitting, isSubmitSuccessful },
+		reset,
+		setError
 	} = useForm<Inputs>({
 		defaultValues: {
 			username: 'jakubjakub',
@@ -27,17 +32,21 @@ export function FormRHF() {
 		}
 	});
 
-	function onSubmit(data) {
-		const { terms, ...restData } = data;
-		console.log(restData);
+	async function onSubmit(data: Inputs) {
+		const { terms, confirmPassword, ...restData } = data;
+
+		try {
+			await emailjs.send('Test', 'template_dyssfjb', restData, 'BzmP2XQ1OmJhyeYom');
+			addNewUser(restData);
+		} catch {
+			setError('root', { message: 'Formularz nie może zostać wysłany, spróbuj jescze raz', type: 'custom' });
+		}
 	}
 
-	console.log(errors);
-
-	if (isSubmitSuccessful) return <Submitted />;
+	if (isSubmitSuccessful) return <Submitted reset={reset} />;
 
 	return (
-		<main>
+		<div>
 			<form className={styles.form} noValidate onSubmit={handleSubmit(onSubmit)}>
 				<div className={styles.textBox}>
 					<h1>Register</h1>
@@ -97,7 +106,8 @@ export function FormRHF() {
 				<button className={styles.button} type='submit'>
 					{isSubmitting ? 'Submitting...' : 'Submit'}
 				</button>
+				{errors?.root && <span>{errors.root.message}</span>}
 			</form>
-		</main>
+		</div>
 	);
 }

@@ -1,0 +1,22 @@
+.usersList {
+	background-color: #131313;
+	padding: 30px;
+	border-radius: 15px;
+	border: 1px solid #333;
+	margin-top: 30px;
+}
+
+.usersList ul {
+	display: flex;
+	flex-direction: column;
+	gap: 15px;
+}
+
+.usersList li {
+	display: flex;
+	flex-direction: column;
+	background-color: #212121;
+	padding: 15px;
+	border-radius: 15px;
+	border: 1px solid #333;
+}
